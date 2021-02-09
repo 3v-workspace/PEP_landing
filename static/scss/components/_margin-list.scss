@@ -29,10 +29,10 @@
             margin-top: $spacer * 5;
             color: #00316D;
         }
-    
-        button {
+        .link-more, button {
             align-self: baseline;
             margin-top: $spacer * 5;
+            text-decoration: none;
             span {
                 color: white;
             }
