@@ -47,6 +47,10 @@
         padding: $spacer $spacer * 2;
     }
 
+    @media (min-width: $lg) {
+        padding: $spacer * 4 $spacer * 2;
+    }
+    
     @media (min-width: $xl) {
         padding: $spacer * 4 $spacer * 10;
     }

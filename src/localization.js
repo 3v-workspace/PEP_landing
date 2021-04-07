@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const allowedLanguages = ['uk', 'en'];
 
 let langs = {
@@ -57,12 +59,33 @@ let langs = {
         uk: 'Ваші пропозиції щодо умов співпраці',
         en: 'Your suggestions on the terms of cooperation',
     },
+    password: {
+        uk: 'Пароль',
+        en: 'Password',
+    },
+    passwordRequired: {
+        uk: 'Будь ласка, введіть пароль',
+        en: 'Enter your password, please',
+    },
 };
 
 export const t = (key) => {
     let currentLang = localStorage.getItem('lang');
     return langs[key][currentLang];
 };
+
+$(() => {
+    const langFromLocalStorage = localStorage.getItem('lang');
+    const langFromUrl = new URLSearchParams(location.search).get('lang');
+
+    if (allowedLanguages.includes(langFromUrl)) {
+        changeLang(langFromUrl);
+    } else if (allowedLanguages.includes(langFromLocalStorage)) {
+        changeLang(langFromLocalStorage);
+    } else {
+        changeLang('uk');
+    }
+});
 
 let handleChangeLang = (langCode) => {};
 
@@ -92,28 +115,6 @@ export function changeLang (languageCode) {
 export function refreshLang() {
     changeLang(localStorage.getItem('lang'));
 }
-
-$('#change-lang').on('click', function(event) {
-    event.preventDefault();
-    let langUser = 'uk';
-    if (localStorage.getItem('lang') === 'uk') {
-        langUser = 'en';
-    }
-    changeLang(langUser);
-});
-
-$(() => {
-    const langFromLocalStorage = localStorage.getItem('lang');
-    const langFromUrl = new URLSearchParams(location.search).get('lang');
-
-    if (allowedLanguages.includes(langFromUrl)) {
-        changeLang(langFromUrl);
-    } else if (allowedLanguages.includes(langFromLocalStorage)) {
-        changeLang(langFromLocalStorage);
-    } else {
-        changeLang('uk');
-    }
-});
 
 export const generateHtml = (uk, en) => {
     return `<span lang="uk">${uk}</span><span lang="en">${en}</span>`

@@ -1,0 +1,74 @@
+.login-modal::before,  .signup-modal::before{
+    content: '';
+    background: #000;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: 0.7;
+    z-index: 9999;
+}
+
+.login-modal, .signup-modal{
+ 	display: none;
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+        color: #4B71E2;
+        font-size: 12px;
+    }
+
+    #error_login {
+        font-size: small;
+        color: red;
+    }
+}
+
+// #signup {
+//     color:white;
+// }
+
+#loginform, #signupform {
+    position: fixed;
+	top: 20%;
+	left: 50%;
+	padding: 20px;
+	width: 360px;
+	margin-left: -200px;	
+	background: #fff;
+	border-radius: $spacer * 3; 
+	z-index: 99999;
+	opacity: 1;	
+
+    button {
+        align-self: center;
+        margin-top: 5%;
+    }
+    @media (max-width: $md) {
+        width: auto;
+        left: 70%;
+    }
+}
+
+.login-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+
+    input {
+        margin-bottom: $spacer;
+        border-radius: $spacer;
+    }
+
+    // input:focus:invalid,
+    // textarea:focus:invalid{
+    //     border: solid 2px #F5192F;
+    // }
+    
+    // input:focus:valid,
+    // textarea:focus:valid{
+    //     border: solid 2px #18E109;
+    //     background-color:#fff;
+    // }
+}

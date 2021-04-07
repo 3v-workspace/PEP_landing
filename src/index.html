@@ -5,57 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="shortcut icon" href="img/faviconblueback.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
     <title>DataOcean PEP</title>
 </head>
 <body>
-    <header id="header" class="container header">
-        <div class="header-logo header__item">
+    <div id="preloader"></div>
+    <header class="container">
+        <figure class="header-logo">
             <img src="img/logoDO.svg" class="header-logo_DO link-landing">
             <img src="img/logo_pep.svg" class="header-logo_PEP link-cpk">
-        </div>
-        <div class="navigation">
-            <div id="menu-btn" class="menu-btn">
-                <span></span>
-            </div>
-            <nav class="menu-navigation">
-                <ul class="nav-link">
-                    <li class="navigation__item">
-                        <a href="#registry_capabilities">
-                            <span lang="uk">Можливості Реєстру</span>
-                            <span lang="en">Registry capabilities</span>
-                        </a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#subscriptions">
-                            <span lang="uk">Тарифні плани</span>
-                            <span lang="en">Subscriptions</span>
-                        </a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#contacts">
-                            <span lang="uk">Контакти</span>
-                            <span lang="en">Contacts</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav-sign">
-                    <li id="login" class="navigation__item link-platform">
+        </figure>
+        <nav class="menu">
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" class="menu-icon">
+                <ion-icon name="menu-outline"></ion-icon>
+            </label>
+            <ul>
+                <li><a class="link link_start" href="#registry_capabilities">
+                        <span lang="uk">Можливості Реєстру</span>
+                        <span lang="en">Registry capabilities</span>
+                </a></li>
+                <li><a class="link link_start" href="#subscriptions">
+                        <span lang="uk">Тарифні плани</span>
+                        <span lang="en">Subscriptions</span>
+                </a></li>
+                <li><a class="link link_start" href="#contacts">
+                        <span lang="uk">Контакти</span>
+                        <span lang="en">Contacts</span>
+                </a></li>
+                <li><button id="login" class="link link_start">
                         <span lang="uk">Увійти</span>
                         <span lang="en">Log in</span>
-                    </li>
-                    <li class="navigation__item nav-sign_button link-platform">
+                </button></li>
+                <li><a id="signup" class="link link-start link-platform">
                         <span lang="uk">Зареєструватись</span>
                         <span lang="en">Sign up</span>
-                    </li>
-                    <li id="change-lang" class="navigation__item select_lang">
+                </a></li>
+                <li><button id="change-lang" class="select_lang">
                         <img lang="uk" src="img/usa_flag.svg">
                         <span class="select_lang" lang="uk">English</span>
                         <img lang="en" src="img/ukraine_flag.svg">
                         <span class="select_lang" lang="en">Українська</span>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                </button></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="section section_header">
@@ -376,6 +370,22 @@
                 <span lang="uk">Надіслати</span>
                 <span lang="en">Submit</span>
             </button>
+        </form>
+    </div>
+
+    <div class="login-modal">
+        <form class="login-group" id="loginform">
+            <input type="email" name="email_login" id="email_login" class="input" required placeholder="Email">
+            <input type="password" name="password_login" id="password_login" class="input" minlength="6" required placeholder="password">
+            <span id="error_login"></span>
+            <button id="login-submit" class="btn-primary btn-primary_submit" type="submit">
+                <span lang="uk">Увійти</span>
+                <span lang="en">Submit</span>
+            </button>
+            <a id="forgot_password">
+                <span lang="uk">Забули пароль?</span>
+                <span lang="en">Forgot password?</span>
+            </a>
         </form>
     </div>
 </body>
