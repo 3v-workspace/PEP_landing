@@ -1,11 +1,9 @@
 import './scss/main.scss';
 import $ from 'jquery';
-import { t, changeLang, onChangeLang } from './localization';
-import { refreshLang, generateHtml } from './localization';
-import SubscriptionsTable from './subscriptions-table'
+import { t, changeLang, onChangeLang, refreshLang, generateHtml } from './localization';
+import SubscriptionsTable from './subscriptions-table';
 import 'jquery-validation';
 import 'jquery-modal';
-import 'jquery.cookie';
 import cookie from './cookie';
 
 onChangeLang((langCode) => {
