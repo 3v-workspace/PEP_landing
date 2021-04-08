@@ -5,7 +5,7 @@
     padding-top: $spacer * 5;
     position: relative;
     flex-direction: column;
-    font-weight: 600;
+    // font-weight: 600;
 
     @media (min-width: $md) {
         flex-direction: row;
@@ -25,7 +25,8 @@
 .header-logo {
     display: flex;
     flex-direction: row;
-    object-fit: contain;
+    // object-fit: contain;
+    float: left;
     cursor: pointer;
     &_DO {
         // max-width: 40%;
@@ -39,19 +40,19 @@
         padding-left: 7%;
         z-index: 1;
     }
-    @media (min-width: $sm) {
-        flex-direction: column;
-        margin-top: -5%;
+    // @media (min-width: $sm) {
+    //     flex-direction: column;
+    //     margin-top: -5%;
 
-        &_PEP {
-            align-self: flex-start;
-            max-width: 70%;
-            padding-top: 2%;
-            padding-left: 1%;
-        }
-    }
+    //     &_PEP {
+    //         align-self: flex-start;
+    //         max-width: 70%;
+    //         padding-top: 2%;
+    //         padding-left: 1%;
+    //     }
+    // }
 
-    @media (min-width: $md) {
+    @media (min-width: $lg) {
         flex-direction: column;
         margin-top: -1%;
 
@@ -64,6 +65,212 @@
             align-self: flex-start;
             padding-top: 27px;
             padding-left: 4%;
+        }
+    }
+}
+
+.menu {
+    float: right;
+    // padding-top: 1%;
+}
+
+.menu ul {
+    // display: flex;
+    align-items: center;
+    // width: 100%;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-left: $spacer * 3;
+
+    a {
+        text-decoration: none;
+        color:#00316D;
+    }
+    a:hover {
+        color: #0461D2;
+    }
+    
+    a:active {
+        color: #00316D;
+        font-weight: bold;
+    }
+}
+
+
+.menu ul li:nth-child(4n) {
+    @media screen and (min-width: 1260px) {
+        margin-left: $spacer * 20;
+    }
+}
+
+#login {
+    background: white;
+    border: 0px;
+    font-family: $font-family-base;
+    line-height: inherit;
+}
+
+#login:hover {
+    color: #0461D2;
+}
+#login:focus {
+    outline: none !important
+}
+
+#signup {
+    font-size: .8em;
+    line-height: normal;
+    color:#00316D;
+    border: 2px solid #00316D;
+    border-radius: 2rem;
+    padding: 5px 7px;
+    @media (min-width: $lg) {
+        padding: 4% 10%;
+        padding-inline-start: 7%;
+        padding-inline-end: 7%;
+        span {
+            min-inline-size: max-content;
+            padding: 2% 5px;
+        }
+    }
+}
+
+#signup:hover {
+    background-color: #B6D7FF;
+    color: #00316D;
+}
+
+#signup:active {
+    background: #074B9E;
+    color:white;
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: $lg) {
+    .menu {
+        // width: 100%;
+        height: auto;
+    }
+
+    .menu ul {
+        // display: block;
+        max-height: 0;
+    	overflow: hidden;
+    	transition: max-height 0.3s;
+    }
+
+    .menu ul li {
+        text-align: right;
+        width: 100%;
+        padding: 10px 0 1px 0;
+        margin-left: 0;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        // width: 100px;
+        height: inherit;
+        top: 1%;
+        right: 0;
+        line-height: 60px;
+    }
+
+    #menuToggle:checked ~ ul {
+        max-height: 350px;
+
+        @media screen and (min-width: $md) {
+            padding-top: 4%;
+        }
+    }
+
+    .menu-icon ion-icon {
+        font-size: 30px;
+    }
+}
+
+.user_profile {
+    padding: 10px;
+    @media (max-width: $lg) {
+        display: inline-block;
+        padding: 0;
+    }
+}
+
+.user_profile:hover {
+    background: #E9F0FD;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    @media (max-width: $lg) {
+        padding: 0;
+    }
+}
+
+.profile_icon {
+    width: 36px;
+    height: 36px;
+    color: #4F5979;
+    vertical-align: middle;
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    text-align: start;
+    background: white;
+    border-radius: 6px;
+    z-index: 5;
+    cursor: pointer;
+    width: 150px;
+    outline: 1px solid #E6E8EE;
+    transition: 0.5s ease-in-out;
+    &_item {
+        font-weight: 500;
+        padding: 4px;
+        background: white;
+        margin: 1px;
+        border-top-style: black solid;
+    }
+    @media screen and (max-width: $xl) {
+        outline: none;
+    }
+}
+
+#logout {
+    border-top: 1px solid #E6E8EE;
+}
+
+.menu li:hover .submenu {
+    display: block;
+
+    .submenu_item {
+        background: none;
+    }
+
+    @media screen and (max-width: $lg) {
+        display: contents;
+
+        .submenu_item {
+            background: none;
         }
     }
 }
