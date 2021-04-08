@@ -254,6 +254,10 @@ $('.link-cpk').on('click', function () {
     window.open(`https://pep.org.ua/${localStorage.getItem('lang')}`);
 });
 
+$('#signup').on('click', function () {
+    document.location = `${process.env.DO_FRONTEND_HOST}/auth/sign-up/?lang=${localStorage.getItem('lang')}`;
+});
+
 $('#api-docs').on('click', function () {
     window.open(`${process.env.DO_BACKEND_HOST}/schema/redoc/`);
 });
