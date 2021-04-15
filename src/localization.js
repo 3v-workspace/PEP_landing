@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import cookie from './cookie';
 
 export const allowedLanguages = ['uk', 'en'];
 
@@ -77,8 +78,11 @@ export const t = (key) => {
 $(() => {
     const langFromLocalStorage = localStorage.getItem('lang');
     const langFromUrl = new URLSearchParams(location.search).get('lang');
+    const langFromCookie = cookie.get('lang');
 
-    if (allowedLanguages.includes(langFromUrl)) {
+    if (allowedLanguages.includes(langFromCookie)) {
+        changeLang(langFromCookie);
+    } else if (allowedLanguages.includes(langFromUrl)) {
         changeLang(langFromUrl);
     } else if (allowedLanguages.includes(langFromLocalStorage)) {
         changeLang(langFromLocalStorage);
