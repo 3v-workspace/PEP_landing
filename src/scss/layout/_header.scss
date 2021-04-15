@@ -174,7 +174,7 @@
     .menu ul li {
         text-align: right;
         width: 100%;
-        padding: 10px 0 1px 0;
+        padding: 1px 0;
         margin-left: 0;
     }
 
@@ -225,52 +225,4 @@
     height: 36px;
     color: #4F5979;
     vertical-align: middle;
-}
-
-.submenu {
-    display: none;
-}
-
-.submenu {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    text-align: start;
-    background: white;
-    border-radius: 6px;
-    z-index: 5;
-    cursor: pointer;
-    width: 150px;
-    outline: 1px solid #E6E8EE;
-    transition: 0.5s ease-in-out;
-    &_item {
-        font-weight: 500;
-        padding: 4px;
-        background: white;
-        margin: 1px;
-        border-top-style: black solid;
-    }
-    @media screen and (max-width: $xl) {
-        outline: none;
-    }
-}
-
-#logout {
-    border-top: 1px solid #E6E8EE;
-}
-
-.menu li:hover .submenu {
-    display: block;
-
-    .submenu_item {
-        background: none;
-    }
-
-    @media screen and (max-width: $lg) {
-        display: contents;
-
-        .submenu_item {
-            background: none;
-        }
-    }
 }

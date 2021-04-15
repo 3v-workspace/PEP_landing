@@ -132,6 +132,7 @@ $(() => {
                     ${generateHtml('Мій кабінет', 'My profile')}
                 </a>
             </li>
+            <hr>
             <li id="logout" class="submenu_item">
                 <a class="link link_start ">
                     ${generateHtml('Вийти', 'Log out')}

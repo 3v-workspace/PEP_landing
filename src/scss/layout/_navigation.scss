@@ -192,7 +192,7 @@
     z-index: 5;
     cursor: pointer;
     width: 150px;
-    outline: 1px solid #E6E8EE;
+    border: 1px solid #E6E8EE;
     transition: 0.5s ease-in-out;
     &_item {
         font-weight: 500;
@@ -204,12 +204,35 @@
     li:hover {
         background: #E9F0FD;
     }
+    hr {
+        border: none;
+        background-color: #E6E8EE;
+        color: #E6E8EE;
+        height: 1px;
+        margin: 0%;
+    }
 }
 
-#logout {
-    border-top: 1px solid #E6E8EE;
-}
+// #logout {
+//     border-top: 1px solid #E6E8EE;
+// }
 
 .navigation li:hover .submenu {
     display: block;
+}
+
+.menu li:hover .submenu {
+    display: block;
+
+    .submenu_item {
+        background: none;
+    }
+
+    @media screen and (max-width: $lg) {
+        display: contents;
+
+        .submenu_item {
+            background: none;
+        }
+    }
 }
