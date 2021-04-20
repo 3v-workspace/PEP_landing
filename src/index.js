@@ -97,6 +97,7 @@ $('#loginform').on('submit', function(event){
             cookie.set('firstname', data.user.first_name);
             cookie.set('lastname', data.user.last_name);
             cookie.set('email', data.user.email);
+            cookie.set('lang', data.user.language)
             document.location = process.env.DO_FRONTEND_HOST + '/system/home/';
         },
         error: function (jqXHR, textStatus, errorMessage) {
@@ -131,6 +132,7 @@ $(() => {
                     ${generateHtml('Мій кабінет', 'My profile')}
                 </a>
             </li>
+            <hr>
             <li id="logout" class="submenu_item">
                 <a class="link link_start ">
                     ${generateHtml('Вийти', 'Log out')}
@@ -151,6 +153,7 @@ $(() => {
         cookie.remove('firstname');
         cookie.remove('lastname');
         cookie.remove('email');
+        cookie.remove('lang');
         document.location.reload();
     })
 });
@@ -263,19 +266,11 @@ $('#api-docs').on('click', function () {
 });
 
 $('.terms_and_conditions').on('click', function () {
-    if (localStorage.getItem('lang') === 'uk') {
-       location.assign(`${process.env.DO_FRONTEND_HOST}/docs/TermsAndConditionsUk.html`);
-    } else {
-        location.assign(`${process.env.DO_FRONTEND_HOST}/docs/TermsAndConditionsEn.html`);
-    }
+    location.assign(`${process.env.DO_FRONTEND_HOST}/docs/${localStorage.getItem('lang')}/TermsAndConditions.html`);
 });
 
 $('.privacy_policy').on('click', function () {
-    if (localStorage.getItem('lang') === 'uk') {
-        location.assign(`${process.env.DO_FRONTEND_HOST}/docs/PrivacyPolicyUk.html`);
-    } else {
-        location.assign(`${process.env.DO_FRONTEND_HOST}/docs/PrivacyPolicyEn.html`);
-    }
+    location.assign(`${process.env.DO_FRONTEND_HOST}/docs/${localStorage.getItem('lang')}/PrivacyPolicy.html`);
 });
 
 // $('.menu-btn').on('click', function (event) {
