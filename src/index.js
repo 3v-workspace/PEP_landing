@@ -144,6 +144,12 @@ $(() => {
         $('#signup').hide();
     }
 
+    $('.user_profile').on('click', function () {
+        if ($(window).width() > 768) {
+            $('.submenu').toggle();
+        }
+    });
+
     $('#user-profile').on('click', function () {
         document.location = process.env.DO_FRONTEND_HOST + '/system/profile/projects/';
     });

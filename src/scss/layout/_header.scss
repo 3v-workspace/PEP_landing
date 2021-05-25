@@ -208,15 +208,18 @@
         padding: 0;
     }
 }
+@media (min-width: $md) {
+    .login:hover {
+        .user_profile {
+            background: #E9F0FD;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
 
-.user_profile:hover {
-    background: #E9F0FD;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-
-    @media (max-width: $lg) {
-        padding: 0;
+            @media (max-width: $lg) {
+                padding: 0;
+            }
+        }
     }
 }
 

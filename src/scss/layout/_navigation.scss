@@ -204,6 +204,11 @@
     li:hover {
         background: #E9F0FD;
     }
+
+    .submenu_item:hover {
+        background: none;
+    }
+
     hr {
         border: none;
         background-color: #E6E8EE;
@@ -217,22 +222,24 @@
 //     border-top: 1px solid #E6E8EE;
 // }
 
-.navigation li:hover .submenu {
-    display: block;
-}
+// .navigation li:hover .submenu {
+//     display: block;
+// }
 
-.menu li:hover .submenu {
-    display: block;
+@media (max-width: $lg) {
+    .menu li .submenu {
+        display: contents !important;
+    }
 
     .submenu_item {
         background: none;
     }
 
-    @media screen and (max-width: $lg) {
-        display: contents;
+    .arrow_icon {
+        display: none;
+    }
 
-        .submenu_item {
-            background: none;
-        }
+    hr {
+        display: none;
     }
 }
