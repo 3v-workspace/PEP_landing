@@ -28,7 +28,7 @@ $(window).on('load', () => {
 $(document).ajaxError(function (e, jqXHR, ajaxSettings, thrownError) {
     if (Math.trunc(jqXHR.status/100) === 5 || jqXHR.status === 0) {
         location.replace('./500.html');
-    } 
+    }
     // else {
     //     alert(`${t('messageError')}\n ${thrownError}`);
     // }
@@ -93,6 +93,7 @@ $('#loginform').on('submit', function(event){
             if (xhr.status !== 200) {
                 return
             }
+            cookie.set('pt', data.project_token);
             cookie.set('token', data.key);
             cookie.set('firstname', data.user.first_name);
             cookie.set('lastname', data.user.last_name);
