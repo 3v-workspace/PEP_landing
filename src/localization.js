@@ -68,6 +68,10 @@ let langs = {
         uk: 'Будь ласка, введіть пароль',
         en: 'Enter your password, please',
     },
+    invalidLoginOrPassword: {
+        uk: 'Невірний логін або пароль',
+        en: 'Invalid login or password',
+    },
 };
 
 export const t = (key) => {
