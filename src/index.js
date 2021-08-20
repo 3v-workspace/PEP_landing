@@ -53,7 +53,7 @@ const getLoginSchema = () => {
                 email: true,
             },
             password: {
-                minlength: 6,
+                minlength: 8,
                 required: true,
             },
         },
@@ -104,7 +104,7 @@ $('#loginform').on('submit', function(event){
         error: function (jqXHR, textStatus, errorMessage) {
             const key = Object.keys(jqXHR.responseJSON)[0];
             const keyMessage = Object.values(jqXHR.responseJSON)[0][0];
-            key === 'non_field_errors' ? $('#error_login').html(keyMessage) : $('#error_login').html(`${key}: ${keyMessage}`);
+            key === 'non_field_errors' ? $('#error_login').html(t('invalidLoginOrPassword')) : $('#error_login').html(`${key}: ${keyMessage}`);
         }
     })
 })
